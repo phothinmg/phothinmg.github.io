@@ -18,7 +18,10 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: siteConfig.metadata.title,
+  title: {
+    template: `%s | ${siteConfig.metadata.title}`,
+    default: siteConfig.metadata.title ?? "",
+  },
   description: siteConfig.metadata.description,
 };
 

@@ -3,9 +3,13 @@ export type SiteConfig = {
   metadata: {
     title?: string;
     description?: string;
+    baseUrl?: string;
+    name?: string;
+    ogImage?: string;
   };
   socialLinks: Array<{ name: IconName; link: string }>;
   navItems: Array<{ path: string; name: string }>;
+  contentDir: string;
 };
 const siteConfig: SiteConfig = {
   metadata: {
@@ -22,7 +26,11 @@ const siteConfig: SiteConfig = {
       link: "https://github.com/",
     },
   ],
-  navItems: [{ path: "/projects", name: "Projects" }],
+  navItems: [
+    { path: "/projects", name: "Projects" },
+    { path: "/blog", name: "Blog" },
+  ],
+  contentDir: "content",
 };
 
 export default siteConfig;

@@ -6,12 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md,mdx,css}\""
   },
   "dependencies": {
+    "jsx-social-icons": "^1.0.10",
+    "mm-mark": "^0.3.8",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106"
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "showdown-prism": "^1.0.8"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
@@ -19,7 +23,11 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.20",
+    "eslint": "9.16.0",
+    "eslint-config-next": "15.0.3",
+    "eslint-config-prettier": "^9.1.0",
     "postcss": "^8",
+    "prettier": "3.4.2",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

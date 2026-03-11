@@ -1,4 +1,4 @@
-url: https://phothin.dev
+url: https://phothinmg.github.io/
 # site
 title: Pho Thin
 source: app
@@ -18,7 +18,7 @@ collections:
     output: true
 terser:
   enabled: true # disable to skip minification
-  output_dir: assets/js # destination directory under site dest
+  output_dir: js # destination directory under site dest
   compress: true # enable compression
   mangle: true # enable name mangling
   source_map: true # produce .map files

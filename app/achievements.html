@@ -1,0 +1,16 @@
+---
+layout: default
+title: Achievements
+---
+
+<head>
+  <title>Pages | {{ site.title }}</title>
+</head>
+<h1>Achievements</h1>
+<ol>
+  {% for page in site.achievements %}
+  <li>
+    <a href="{{ page.url }}" style="font-size: 18px">{{ page.title }}</a>
+  </li>
+  {% endfor %}
+</ol>

@@ -1,0 +1,11 @@
+- title: Susee
+  github: https://github.com/phothinmg/susee
+  npm: https://www.npmjs.com/package/susee
+  summary: A tiny TypeScript bundler that emits compiled artifacts in multiple module formats.
+- title: Thetkarit
+  github: https://github.com/phothinmg/thetkarits
+  summary: A library for Burmese calendar calculations and astronomical studies.
+- title: My Julian
+  github: https://github.com/phothinmg/my-julian
+  npm: https://www.npmjs.com/package/my-julian
+  summary: Node.js C++ addon that converts Gregorian date/time to Julian Date.

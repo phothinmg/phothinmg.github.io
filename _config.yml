@@ -1,0 +1,26 @@
+url: https://phothin.dev
+# site
+title: Pho Thin
+source: app
+markdown: kramdown
+sass:
+  style: compressed
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+exclude:
+  - Makefile
+collections:
+  achievements:
+    output: true
+  blog:
+    output: true
+terser:
+  enabled: true # disable to skip minification
+  output_dir: assets/js # destination directory under site dest
+  compress: true # enable compression
+  mangle: true # enable name mangling
+  source_map: true # produce .map files
+  exclude:
+    - "**/*.min.js" # glob patterns (relative to source dir) to skip

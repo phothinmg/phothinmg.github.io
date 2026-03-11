@@ -1,0 +1,16 @@
+<section id="blog" class="section">
+  <div class="container">
+    <div class="section-title-container">
+      <h2 class="section-title">Blog Posts</h2>
+      <a href="/blog" class="view-all" title="view-all-posts">View All</a>
+    </div>
+    <div class="blog-card-container" id="blog-card">
+      {% for post in site.blog limit:6 %}
+      <div class="blog-card">
+        <a href="{{ post.url}}" style="font-size: 16px">{{ post.title }}</a>
+        <p class="post-date">{{ post.date | date_to_string }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

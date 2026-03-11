@@ -1,0 +1,18 @@
+---
+layout: default
+title: Crafts
+---
+
+<head>
+  <title>Crafts | {{ site.title }}</title>
+</head>
+<h1>Crafts</h1>
+ {% for page in site.crafts %}
+
+    <div class="box">
+      <a href="{{ page.url }}" style="font-size: 18px">{{ page.title }}</a>
+      <p>{{ page.summary }}</p>
+    </div>
+
+    {% endfor %}
+</ol>

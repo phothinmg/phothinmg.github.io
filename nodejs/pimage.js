@@ -25,7 +25,7 @@ async function transformImages() {
                 outDir: image.outDir,
                 width: image.size.large.w,
                 height: image.size.large.h,
-                outFileName: `${image.name}-large`,
+                outFileName: `${image.name}-660`,
             }),
             "webp",
         ]);
@@ -35,7 +35,7 @@ async function transformImages() {
                 outDir: image.outDir,
                 width: image.size.medium.w,
                 height: image.size.medium.h,
-                outFileName: `${image.name}-medium`,
+                outFileName: `${image.name}-495`,
             }),
             "webp",
         ]);
@@ -45,7 +45,7 @@ async function transformImages() {
                 outDir: image.outDir,
                 width: image.size.small.w,
                 height: image.size.small.h,
-                outFileName: `${image.name}-small`,
+                outFileName: `${image.name}-330`,
             }),
             "webp",
         ]);

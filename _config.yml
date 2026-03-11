@@ -12,7 +12,7 @@ plugins:
 exclude:
   - Makefile
 collections:
-  achievements:
+  crafts:
     output: true
   blog:
     output: true

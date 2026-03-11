@@ -10,16 +10,16 @@ module.exports = [
         outDir: image_outDir,
         size: {
             large: {
-                w: 600,
-                h: 600,
+                w: 660,
+                h: 660,
             },
             medium: {
-                w: 450,
-                h: 450,
+                w: 495,
+                h: 495,
             },
             small: {
-                w: 300,
-                h: 300,
+                w: 330,
+                h: 330,
             },
         },
     },

@@ -1,0 +1,17 @@
+<section id="crafts" class="section">
+  <div class="container">
+    <div class="section-title-container">
+      <h2 class="section-title">Crafts</h2>
+      <a href="/crafts" class="view-all" title="view-all-crafts">View All</a>
+    </div>
+
+    {% for page in site.crafts %}
+
+    <div class="box">
+      <a href="{{ page.url }}" style="font-size: 18px">{{ page.title }}</a>
+      <p>{{ page.summary }}</p>
+    </div>
+
+    {% endfor %}
+  </div>
+</section>

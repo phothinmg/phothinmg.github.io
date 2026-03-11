@@ -3,5 +3,5 @@ Gemfile.lock
 _site
 .env
 node_modules
-package.json
+package-lock.json
 a.html

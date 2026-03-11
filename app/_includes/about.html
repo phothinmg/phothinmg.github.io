@@ -2,13 +2,15 @@
   <div class="about-content">
     <div class="about-image">
       <img
-        src="/images/logo.webp"
+        src="/images/logo-large.webp"
+        srcset="
+          /images/logo-small.webp  300w,
+          /images/logo-medium.webp 450w,
+          /images/logo-large.webp  600w
+        "
+        sizes="(max-width: 600px) 80vw, 400px"
         alt="Profile Image"
         fetchpriority="high"
-        ,
-        width="300"
-        ,
-        height="300"
       />
     </div>
     <div class="about-text">

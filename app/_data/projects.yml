@@ -5,7 +5,6 @@
 - title: Thetkarit
   github: https://github.com/phothinmg/thetkarits
   summary: A library for Burmese calendar calculations and astronomical studies.
-- title: My Julian
-  github: https://github.com/phothinmg/my-julian
-  npm: https://www.npmjs.com/package/my-julian
-  summary: Node.js C++ addon that converts Gregorian date/time to Julian Date.
+- title: mmdevs.org
+  github: https://github.com/phothinmg/mmdevs.org
+  summary: Community-managed subdomains for developers from Myanmar.

@@ -5,3 +5,8 @@ _site
 node_modules
 package-lock.json
 a.html
+
+# Local
+
+vendor/bundle/
+.bundle/

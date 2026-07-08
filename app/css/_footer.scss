@@ -11,9 +11,9 @@
     width: min(100%, var(--width-max));
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 0.75rem;
     padding: 1rem 0 0;
 
@@ -82,10 +82,10 @@
       }
     } // footer_icons
 
-    @media screen and (min-width: 1280px) {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
+    // @media screen and (min-width: 1280px) {
+    //   flex-direction: row;
+    //   align-items: center;
+    //   justify-content: space-between;
+    // }
   } // footer_meta
 }

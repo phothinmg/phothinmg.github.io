@@ -1,12 +1,12 @@
 - title: Susee
   github: https://github.com/phothinmg/susee
   npm: https://www.npmjs.com/package/susee
-  summary: A tiny TypeScript bundler that emits compiled artifacts in multiple module formats.
+  summary: A lightweight TypeScript bundler designed to produce compiled output across multiple JavaScript module formats.
   homepage: https://suseejs.org/
 - title: Thetkarit
   github: https://github.com/phothinmg/thetkarits
-  summary: A library for Burmese calendar calculations and astronomical studies.
+  summary: A software library for Burmese calendar computation and related astronomical calculations.
 - title: mmdevs.org
   github: https://github.com/phothinmg/mmdevs.org
-  summary: Community-managed subdomains for developers from Myanmar.
+  summary: A community-driven platform that provides managed subdomains for developers and technical communities in Myanmar.
   homepage: https://docs.mmdevs.org/

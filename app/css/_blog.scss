@@ -1,0 +1,37 @@
+section.blog_body {
+  margin: auto;
+  max-width: var(--width-max);
+  padding: 18px;
+
+  .container {
+    padding: 27px;
+    border-radius: 7px;
+    background-color: var(--color-bg-blog-post);
+
+    div.blog_head {
+      padding-bottom: 18px;
+      border-bottom: 0.5px dotted var(--color-border-1);
+
+      h1 {
+        font-family: var(--font-playfair);
+        font-weight: 600;
+      }
+      p {
+        font-family: var(--font-playfair);
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        margin-bottom: 5px;
+      }
+
+      time {
+        color: var(--color-text-2);
+        font-style: italic;
+      }
+    }
+
+    p a {
+      text-decoration: none;
+      margin: 0 3px;
+    }
+  }
+}

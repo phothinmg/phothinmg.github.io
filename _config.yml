@@ -3,6 +3,8 @@ url: https://phothinmg.github.io/
 title: Pho Thin
 source: app
 markdown: kramdown
+kramdown:
+  syntax_highlighter: none
 sass:
   style: compressed
 plugins:
@@ -29,6 +31,8 @@ minify_js:
 jekyll_pagefind:
   quiet: true
 nav_links:
+  - text: Blog
+    link: /blog
   - text: Projects
     link: "/#projects"
   - text: Contributions

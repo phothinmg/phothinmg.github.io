@@ -1,3 +1,4 @@
+// cspell:disable
 var MPLNT = [
     "စနေ",
     "တနင်္ဂနွေ",
@@ -263,7 +264,8 @@ var docArray = [
     document.getElementById("mb-5"),
     document.getElementById("mb-6"),
     document.getElementById("mb-7"),
-];
+],
+    ACTIVE_PATTERN_COLOR = "#d5393e";
 function mahabote() {
     var e,
         t,
@@ -326,8 +328,13 @@ function mahabote() {
         s++
     ) {
         var T = docArray[s],
-            D = f[s];
-        (D.remin === l && (T.style.color = "red"), (T.innerHTML = D.rem));
+            D = f[s],
+            N = D.remin === l;
+        ((T.style.color = N ? ACTIVE_PATTERN_COLOR : "currentColor"),
+            N
+                ? T.setAttribute("data-active-pattern", "true")
+                : T.removeAttribute("data-active-pattern"),
+            (T.innerHTML = D.rem));
     }
     ((document.getElementById("tb-1").innerHTML = f[0].rem),
         (document.getElementById("tb-2").innerHTML = "" + u + "ဖွား"),
@@ -338,7 +345,9 @@ function mahabote() {
 function clearDiv() {
     for (var e = 0; e < docArray.length; e++) {
         var t = docArray[e];
-        ((t.style.color = "inherit"), (t.innerHTML = ""));
+        ((t.style.color = "currentColor"),
+            t.removeAttribute("data-active-pattern"),
+            (t.innerHTML = ""));
     }
     ((document.getElementById("tb-1").innerHTML = ""),
         (document.getElementById("tb-2").innerHTML = ""),
@@ -346,8 +355,90 @@ function clearDiv() {
         (document.getElementById("tb-4").innerHTML = ""),
         (document.getElementById("tb-5").innerHTML = ""));
 }
+function sanitizeExportTree(e) {
+    function t(e) {
+        return !!e && (e.indexOf("color-mix(") > -1 || e.indexOf("color(") > -1);
+    }
+    ((e.style.background = "#ffffff"),
+        (e.style.backgroundColor = "#ffffff"),
+        (e.style.border = "1px solid #d8dee4"),
+        (e.style.borderRadius = "20px"),
+        (e.style.boxShadow = "none"),
+        (e.style.color = "#1f2937"));
+    for (
+        var n = e.querySelectorAll(
+            ".result-table-wrap, .result-table td, .table-text, .x1-line, .x11-line, .x2-line, .y1-line, .y2-line, .pl, .pc, .pr"
+        ),
+        a = 0;
+        a < n.length;
+        a++
+    ) {
+        var r = n[a];
+        r.classList.contains("result-table-wrap") &&
+            ((r.style.background = "#ffffff"),
+                (r.style.border = "1px solid #d8dee4"),
+                (r.style.borderRadius = "16px"));
+        "TD" === r.tagName &&
+            ((r.style.backgroundColor = "#ffffff"),
+                (r.style.borderBottom = "1px solid #e5e7eb"),
+                (r.style.color = "#1f2937"),
+                r === r.parentElement.children[0] && (r.style.backgroundColor = "#f3f4f6"));
+        r.classList.contains("table-text") && (r.style.color = "inherit");
+        /^(x1-line|x11-line|x2-line|y1-line|y2-line)$/.test(r.className) &&
+            ((r.style.background = "#ffffff"), (r.style.borderColor = "#6b7280"));
+        /^(pl|pc|pr)$/.test(r.className) &&
+            (r.style.color =
+                "true" === r.getAttribute("data-active-pattern")
+                    ? ACTIVE_PATTERN_COLOR
+                    : "#111827");
+    }
+    for (
+        var o = [e],
+        m = [
+            "background",
+            "backgroundColor",
+            "borderColor",
+            "borderTopColor",
+            "borderRightColor",
+            "borderBottomColor",
+            "borderLeftColor",
+            "boxShadow",
+            "color",
+            "outlineColor",
+            "textDecorationColor",
+        ];
+        o.length;
+
+    ) {
+        for (var i = o.shift(), l = getComputedStyle(i), u = 0; u < m.length; u++) {
+            var d = m[u],
+                c = l[d];
+            if (t(c)) {
+                "background" === d
+                    ? ((i.style.background = "none"),
+                        (i.style.backgroundColor = l.backgroundColor || "#ffffff"))
+                    : "backgroundColor" === d
+                        ? (i.style.backgroundColor = "#ffffff")
+                        : "boxShadow" === d
+                            ? (i.style.boxShadow = "none")
+                            : d.indexOf("border") === 0 || "outlineColor" === d
+                                ? (i.style[d] = "#d1d5db")
+                                : "color" === d || "textDecorationColor" === d
+                                    ? (i.style[d] = "#1f2937")
+                                    : (i.style[d] = "transparent");
+            }
+        }
+        for (var f = 0; f < i.children.length; f++) o.push(i.children[f]);
+    }
+}
 function saveAsImage() {
-    html2canvas(document.getElementById("result")).then(function (e) {
+    html2canvas(document.getElementById("result"), {
+        backgroundColor: null,
+        onclone: function (e) {
+            var t = e.getElementById("result");
+            t && sanitizeExportTree(t);
+        },
+    }).then(function (e) {
         var t = document.createElement("a");
         ((t.download = "maharbote.png"),
             (t.href = e.toDataURL("image/png")),

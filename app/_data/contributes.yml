@@ -1,17 +1,17 @@
 - title: Jekyll Tabler
   github: https://github.com/phothinmg/jekyll-tabler
   gems: https://rubygems.org/gems/jekyll-tabler
-  summary: Tabler Icons plugin for Jekyll site as liquid tag.
+  summary: A Jekyll plugin that exposes Tabler Icons through convenient Liquid tags for use in static sites.
   homepage: https://phothinmg.github.io/jekyll-tabler/
 - title: Jekyll Pagefind
   github: https://github.com/phothinmg/jekykll-pagefind
   gems: https://rubygems.org/gems/jekyll-pagefind
-  summary: A plugin that runs the Pagefind binary for a Jekyll site.
+  summary: A Jekyll plugin that integrates the Pagefind binary into the site build process to add static search indexing.
 - title: "@types/textile-js"
   github: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/textile-js
   npm: https://www.npmjs.com/package/@types/textile-js
-  summary: Type definitions for textile-js , fully featured Textile parser in JavaScript.
+  summary: TypeScript type definitions for textile-js, a full-featured Textile parser for JavaScript applications.
 - title: Jekyll Minify Js
   github: https://github.com/phothinmg/jekyll-minify-js
   gems: https://rubygems.org/gems/jekyll-minify-js
-  summary: Jekyll plugin that minifies JavaScript files with Terser after the site is written.
+  summary: A Jekyll plugin that minifies generated JavaScript assets with Terser after the site output is written.

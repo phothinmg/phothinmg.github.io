@@ -8,35 +8,43 @@ summary: >
 
 <main class="main">
   <div class="row">
-    <div class="col">
-      <p class="form-title">မွေးနေ့ရွေးချယ်ပါ</p>
+    <div class="col col-form">
+      <div class="panel-intro">
+        <p class="panel-kicker">Interactive Craft</p>
+        <p class="form-title">မွေးနေ့ရွေးချယ်ပါ</p>
+        <p class="panel-copy">
+          မွေးနေ့ကိုရွေးချယ်ပြီး မဟာဘုတ်တွက်ချက်မှုရလဒ်ကို ချက်ချင်းကြည့်ရှုနိုင်ပါသည်။
+        </p>
+      </div>
       <div class="date-time" id="date-time">
-        <div>
+        <div class="input-group">
           <label for="year">Year</label>
           <select name="year" id="year"></select>
         </div>
-        <div>
+        <div class="input-group">
           <label for="month">Month</label>
           <select name="month" id="month"></select>
         </div>
-        <div>
+        <div class="input-group">
           <label for="date">Date</label>
           <select name="date" id="date"></select>
         </div>
-        <input
-          id="result-btn"
-          type="submit"
-          value="Submit" />
-        <input
-          id="clear-btn"
-          type="submit"
-          value="Clear Result" />
+        <div class="form-actions">
+          <input
+            id="result-btn"
+            type="submit"
+            value="Calculate" />
+          <input
+            id="clear-btn"
+            type="submit"
+            value="Clear" />
+        </div>
       </div>
     </div>
-    <div class="col">
+    <div class="col col-result">
       <p class="form-title">မဟာဘုတ်ဇာတာခွင်</p>
-      <div style="padding: 20px">
-        <div id="result" style="padding: 18px">
+      <div class="result-panel-body">
+        <div id="result" class="result-card">
           <div class="result-container">
             <div class="x2-line">
               <p class="pc" id="mb-1"></p>
@@ -62,56 +70,58 @@ summary: >
             <div class="y1-line"></div>
             <div class="y2-line"></div>
           </div>
-          <br/>
-          <table>
-            <tr>
-              <td>
-                <small class="table-text">အကြွင်း</small>
-              </td>
-              <td>
-                <small class="table-text" id="tb-1"></small>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <small class="table-text">မဟာဘုတ်</small>
-              </td>
-              <td>
-                <small class="table-text" id="tb-2"></small>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <small class="table-text">အသက်</small>
-              </td>
-              <td>
-                <small class="table-text" id="tb-3"></small>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <small class="table-text">သက်ရောက်</small>
-              </td>
-              <td>
-                <small class="table-text" id="tb-4"></small>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <small class="table-text">လက်ကျန်နှစ်</small>
-              </td>
-              <td>
-                <small class="table-text" id="tb-5"></small>
-              </td>
-            </tr>
-          </table>
+          <div class="result-table-wrap">
+            <table class="result-table">
+              <tr>
+                <td>
+                  <small class="table-text">အကြွင်း</small>
+                </td>
+                <td>
+                  <small class="table-text" id="tb-1"></small>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <small class="table-text">မဟာဘုတ်</small>
+                </td>
+                <td>
+                  <small class="table-text" id="tb-2"></small>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <small class="table-text">အသက်</small>
+                </td>
+                <td>
+                  <small class="table-text" id="tb-3"></small>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <small class="table-text">သက်ရောက်</small>
+                </td>
+                <td>
+                  <small class="table-text" id="tb-4"></small>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <small class="table-text">လက်ကျန်နှစ်</small>
+                </td>
+                <td>
+                  <small class="table-text" id="tb-5"></small>
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
-        <br/>
-        <input
-          id="download-btn"
-          type="submit"
-          value="Download PNG"
-          onclick="saveAsImage()" />
+        <div class="download-action">
+          <input
+            id="download-btn"
+            type="submit"
+            value="Download PNG"
+            onclick="saveAsImage()" />
+        </div>
       </div>
     </div>
   </div>

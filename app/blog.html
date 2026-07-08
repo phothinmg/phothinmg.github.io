@@ -2,16 +2,30 @@
 layout: default
 title: Blog
 ---
+{% assign posts = site.blog | sort: 'date' | reverse %}
 <section class="section">
   <div class="container">
-    <div class="section-title-container">
-      <h2 class="section-title">Blog Posts</h2>
-    </div>
-    <div class="blog-card-container" id="blog-card">
-      {% for post in site.blog %}
-        <div class="blog-card">
-          <a href="{{ post.url}}" style="font-size: 16px">{{ post.title }}</a>
-          <p class="post-date">{{ post.date | date_to_string }}</p>
+    <h2 class="section-title">Blog Posts</h2>
+    <div class="project-container" id="blog-view">
+      {% for post in posts %}
+        {% assign published_at = post.publish_date | default: post.date %}
+        <div class="craft-container">
+          <a href="{{ post.url }}" class="craft-link">
+            <span class="craft-meta">
+              <span class="craft-meta-icon" aria-hidden="true"></span>
+              <span>
+                Blog Post
+                {% if published_at %}
+                  ·
+                  <time datetime="{{ published_at | date_to_xmlschema }}">{{ published_at | date: "%B %-d, %Y" }}</time>
+                {% endif %}
+              </span>
+            </span>
+            <span class="craft-title">{{ post.title }}</span>
+            {% if post.summary %}
+              <span class="craft-summary">{{ post.summary }}</span>
+            {% endif %}
+          </a>
         </div>
       {% endfor %}
     </div>

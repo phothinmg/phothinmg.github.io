@@ -1,3 +1,4 @@
+// cspell:disable
 for (
     var moth_array = [
         { val: "01", name: "Jan" },

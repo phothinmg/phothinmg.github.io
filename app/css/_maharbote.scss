@@ -2,19 +2,31 @@
   margin: 0;
   display: grid;
   grid-template-columns: 1fr min(45rem, 90%) 1fr;
-  padding-top: 36px;
+  padding: 36px 0 54px;
 }
 .main > * {
   grid-column: 2;
 }
-select {
+.main select {
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  padding: 14px 16px;
+  margin: 0;
   display: inline-block;
   border: 1px solid var(--color-border-1);
-  border-radius: 4px;
+  border-radius: 14px;
   box-sizing: border-box;
+  background: var(--color-bg-1);
+  color: var(--color-text-1);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+.main select:focus {
+  outline: none;
+  border-color: var(--color-indigo-2);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--color-indigo-soft) 45%, transparent);
 }
 .theme-btn {
   background-color: inherit;
@@ -23,44 +35,157 @@ select {
   float: right;
 }
 .date-time {
-  border-radius: 5px;
-  background-color: inherit;
-  padding: 20px;
+  display: grid;
+  gap: 14px;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-bg-1) 100%, transparent),
+    color-mix(in srgb, var(--color-bg-3) 90%, transparent)
+  );
+  border: 1px solid var(--color-border-2);
+  padding: 22px;
 }
-input[type="submit"] {
+.main input[type="submit"] {
   width: 100%;
-  background-color: var(--color-text-2);
-  color: var(--accent-bg);
-  padding: 7px 10px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
+  background: linear-gradient(
+    135deg,
+    var(--color-indigo-2),
+    var(--color-green-2)
+  );
+  color: #fff;
+  padding: 12px 14px;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: 999px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
+  font-family: var(--font-orb);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
 }
 
-input[type="submit"]:hover {
-  background-color: var(--accent-hover);
+.main input[type="submit"]:hover,
+.main input[type="submit"]:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px
+    color-mix(in srgb, var(--color-indigo-soft) 55%, transparent);
+  filter: saturate(1.05);
 }
 .row {
   display: -webkit-flex;
   display: flex;
-  row-gap: 7px;
-  column-gap: 7px;
+  row-gap: 18px;
+  column-gap: 18px;
 }
 .col {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  padding: 10px;
-  border: 1px solid #888484;
+  padding: 18px;
+  border: 1px solid var(--color-border-2);
   min-height: max-content;
-  border-radius: 10px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 22px;
+  background: var(--color-bg-1);
+  box-shadow: 0 18px 45px
+    color-mix(in srgb, var(--color-gray-soft) 40%, transparent);
 }
 .form-title {
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
+  color: var(--color-text-1);
+}
+.col-form {
+  background:
+    radial-gradient(
+      circle at top right,
+      color-mix(in srgb, var(--color-green-soft) 72%, transparent),
+      transparent 42%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-bg-1) 100%, transparent),
+      color-mix(in srgb, var(--color-bg-3) 92%, transparent)
+    );
+}
+.col-result {
+  background:
+    radial-gradient(
+      circle at top left,
+      color-mix(in srgb, var(--color-indigo-soft) 72%, transparent),
+      transparent 46%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-bg-1) 100%, transparent),
+      color-mix(in srgb, var(--color-bg-3) 94%, transparent)
+    );
+}
+.panel-intro {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.panel-kicker {
+  font-family: var(--font-orb);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-indigo-2);
+  text-align: center;
+}
+.panel-copy {
+  color: var(--color-text-2);
+  line-height: 1.75;
+  text-align: center;
+}
+.input-group {
+  display: grid;
+  gap: 6px;
+}
+.input-group label {
+  font-family: var(--font-orb);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-2);
+}
+.form-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 6px;
+}
+#clear-btn {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-text-2) 88%, black),
+    color-mix(in srgb, var(--color-text-1) 82%, black)
+  );
+}
+.result-panel-body {
+  display: grid;
+  gap: 18px;
+  padding: 20px;
+}
+.result-card {
+  display: grid;
+  gap: 22px;
+  padding: 20px 18px;
+  border: 1px solid
+    color-mix(in srgb, var(--color-text-2) 28%, var(--color-border-1));
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-bg-1) 100%, transparent),
+    color-mix(in srgb, var(--color-bg-3) 88%, transparent)
+  );
+  box-shadow: inset 0 1px 0
+    color-mix(in srgb, var(--color-bg-1) 88%, transparent);
 }
 table {
   border-collapse: collapse;
@@ -69,13 +194,36 @@ table {
 
 th,
 td {
-  padding: 8px;
+  padding: 10px 12px;
   text-align: left;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border-2);
 }
 
-tr:hover {
-  background-color: var(--accent-hover);
+.result-table-wrap {
+  border: 1px solid var(--color-border-2);
+  border-radius: 16px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--color-bg-1) 92%, var(--color-bg-3));
+}
+.result-table tr:last-child td {
+  border-bottom: none;
+}
+.result-table td:first-child {
+  width: 48%;
+  color: var(--color-text-2);
+  background: color-mix(in srgb, var(--color-bg-3) 78%, transparent);
+}
+.result-table td:last-child {
+  text-align: right;
+  color: var(--color-text-1);
+  font-weight: 700;
+}
+.result-table tr:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--color-indigo-soft) 24%,
+    transparent
+  );
 }
 .result-container {
   position: relative;
@@ -174,9 +322,35 @@ tr:hover {
 .table-text {
   font-weight: bold;
 }
+.download-action {
+  display: flex;
+  justify-content: center;
+}
+#download-btn {
+  max-width: 240px;
+  background: linear-gradient(
+    135deg,
+    var(--color-green-2),
+    var(--color-indigo-2)
+  );
+  box-shadow: 0 14px 30px
+    color-mix(in srgb, var(--color-green-soft) 40%, transparent);
+}
 @media (max-width: 600px) {
+  .result-panel-body {
+    padding: 14px 6px 6px;
+  }
+  .result-card {
+    padding: 16px 14px;
+  }
   .row {
     -webkit-flex-direction: column;
     flex-direction: column;
+  }
+  .form-actions {
+    grid-template-columns: 1fr;
+  }
+  #download-btn {
+    max-width: none;
   }
 }

@@ -1,11 +1,8 @@
----
----
-
 .main {
   margin: 0;
   display: grid;
   grid-template-columns: 1fr min(45rem, 90%) 1fr;
-  padding-top: 10px;
+  padding-top: 36px;
 }
 .main > * {
   grid-column: 2;
@@ -15,7 +12,7 @@ select {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid var(--border);
+  border: 1px solid var(--color-border-1);
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -32,7 +29,7 @@ select {
 }
 input[type="submit"] {
   width: 100%;
-  background-color: var(--text-light);
+  background-color: var(--color-text-2);
   color: var(--accent-bg);
   padding: 7px 10px;
   margin: 8px 0;
@@ -93,8 +90,8 @@ tr:hover {
 .x2-line,
 .y2-line {
   position: absolute;
-  background: var(--ptm-bg);
-  border: 1px ridge var(--ptm-color-h56);
+  background: var(--color-bg-1);
+  border: 1px ridge var(--color-text-2);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;

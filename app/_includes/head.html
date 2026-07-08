@@ -1,42 +1,44 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Pho Thin Maung's personal site" />
+{% assign description = page.summary | default: "Pho Thin Maung's personal site" %}
+<meta name="description" content="{{ description }}" />
+{% assign title = site.title %}
+{% if page.title %}
+  {% assign title = site.title | append: ' | ' | append: page.title %}
+{% endif %}
+<title>{{ title }}</title>
 <!-- CSS and Fonts -->
-<link rel="preload" href="/css/fonts.css" as="style" />
-<link rel="stylesheet" href="/css/fonts.css" />
-<link rel="preload" href="/css/index.css" as="style" />
-<link rel="stylesheet" href="/css/index.css" />
-<!-- Favicons -->
+<link
+  rel="preload"
+  href="/css/phothin.css"
+  as="style" />
+<link rel="stylesheet" href="/css/phothin.css" />
+  <!-- Favicons -->
 <link
   rel="icon"
   type="image/png"
   href="/favicon/android-chrome-512x512.png"
-  sizes="512x512"
-/>
+  sizes="512x512" />
 <link
   rel="icon"
   type="image/png"
   href="/favicon/android-chrome-192x192.png"
-  sizes="192x192"
-/>
+  sizes="192x192" />
 <link rel="shortcut icon" href="/favicon/favicon.ico" />
 <link
   rel="apple-touch-icon"
   sizes="180x180"
-  href="/favicon/apple-touch-icon.png"
-/>
+  href="/favicon/apple-touch-icon.png" />
 <link
   rel="icon"
   type="image/png"
   sizes="32x32"
-  href="/favicon/favicon-32x32.png"
-/>
+  href="/favicon/favicon-32x32.png" />
 <link
   rel="icon"
   type="image/png"
   sizes="16x16"
-  href="/favicon/favicon-16x16.png"
-/>
+  href="/favicon/favicon-16x16.png" />
 <link rel="manifest" href="/favicon/site.webmanifest" />
 <!-- MathJax -->
 <script>
@@ -56,5 +58,11 @@
 <script
   id="MathJax-script"
   async
-  src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"
-></script>
+  src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+<link
+  rel="preload"
+  href="{{ '/pagefind/pagefind-component-ui.css' | relative_url }}"
+  as="style" />
+<link rel="stylesheet" href="{{ '/pagefind/pagefind-component-ui.css' | relative_url }}" />
+<script src="{{ '/pagefind/pagefind-component-ui.js' | relative_url }}" type="module"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>

@@ -26,6 +26,7 @@
     "config": ".rubocop.yml"
   },
   "cSpell.words": [
+    "contentinfo",
     "Disqus",
     "ggroup",
     "Gmefile",
@@ -40,6 +41,9 @@
     "rubocop",
     "rufo",
     "sgroup",
+    "srcset",
+    "stylesheet",
+    "topbtn",
     "vgroup"
   ]
 }

@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     {% include head.html %}
+  {% include initTheme.html %}
     <!-- Jekyll Plugin -->
     {% feed_meta %} {% seo %}
   </head>
@@ -9,9 +10,10 @@
     {% include navigation.html %}
     <main>{{ content }}</main>
     <!-- Footer -->
-    {% include footer.html %}
+  {% include footer.html %}
+
     <!-- Scroll to top button -->
     {% include top_btn.html %}
-    <script src="/js/ptm.js"></script>
+    <script src="{{ '/js/phothin.js' | relative_url }}"></script>
   </body>
 </html>

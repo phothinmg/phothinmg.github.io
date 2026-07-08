@@ -21,5 +21,5 @@ install:
 	bundle install
 
 init:
-	bash ptm.sh
+	bash bin/init
 

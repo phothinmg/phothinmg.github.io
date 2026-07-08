@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Projects
+title: Plugins
 ---
 
 <section class="section">
   <div class="container">
-    <h2 class="section-title">Projects</h2>
-    <div class="project-container" id="projects-view">
-      {% for project in site.data.projects %}
+    <h2 class="section-title">Contributions</h2>
+    <div class="project-container" id="contributions-view">
+      {% for project in site.data.contributes %}
         {% include card.html title=project.title summary=project.summary homepage=project.homepage github=project.github npm=project.npm gems=project.gems
         %}
       {% endfor %}

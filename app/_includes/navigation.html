@@ -1,30 +1,86 @@
-<header>
-  <nav>
-    <a href="/" class="logo" title="home"> Pho Thin </a>
-    <div>
-      <a href="/#projects" title="project">Projects</a>
-      <a href="/#blog" title="blog">Blog</a>
-      <a href="/#crafts" title="blog">Crafts</a>
-      <button type="button" class="theme-btn" id="theme-btn" aria-label="theme">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon icon-tabler icons-tabler-outline icon-tabler-sun"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
-          <path
-            d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"
-          />
-        </svg>
+<header class="header" role="banner">
+  <nav role="navigation">
+    <a href="{{'/'| relative_url}}" class="nav_logo">{{ site.title }}</a>
+    <div class="nav_menu" id="nav-menu">
+      <ul class="nav_list">
+        {% if site.nav_links.size > 0 %}
+          {% for item in site.nav_links %}
+            <li class="nav_item">
+              <a
+                href="{{ item.link | relative_path }}"
+                class="nav_link"
+                id="{{ item.text | join: '-'|'link' }}">{{ item.text }}</a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+      <div class="nav_menu_tools">
+        <button
+          class="nav_theme nav_theme-mobile"
+          data-theme-toggle
+          type="button"
+          aria-label="Switch to dark mode"
+          title="Switch to dark mode">
+          {% tabler ti-sun %}
+          {% tabler ti-moon %}
+          <span>Dark mode</span>
+        </button>
+      </div>
+      <!-- Close button -->
+      <button
+        class="nav_close"
+        id="nav-close"
+        type="button"
+        aria-label="Close menu">
+        {% tabler ti-x %}
+      </button>
+    </div>
+    <div class="nav_actions">
+      <button
+        class="nav_theme"
+        data-theme-toggle
+        type="button"
+        aria-label="Switch to dark mode"
+        title="Switch to dark mode">
+        {% tabler ti-sun %}
+        {% tabler ti-moon %}
+      </button>
+
+      <!-- Search button -->
+      <button
+        class="nav_search"
+        id="search-btn"
+        type="button"
+        aria-label="Open search">
+        {% tabler ti-search %}
+      </button>
+
+      <button
+        class="nav_toggle"
+        id="nav-toggle"
+        type="button"
+        aria-label="Open menu">
+        {% tabler ti-menu-2 %}
       </button>
     </div>
   </nav>
 </header>
+
+<div
+  class="search"
+  id="search"
+  role="search">
+  <div
+    id="pf-search"
+    class="search_form"
+    role="searchbox">
+    <pagefind-searchbox></pagefind-searchbox>
+  </div>
+  <button
+    class="search_close"
+    id="search-close"
+    type="button"
+    aria-label="Close search">
+    {% tabler ti-x %}
+  </button>
+</div>

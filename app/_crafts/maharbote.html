@@ -1,16 +1,11 @@
 ---
+# cspell:disable
 layout: default
 title: Get Maharbote from Birthday
 summary: >
   မိမိမွေးနေ့မှမဟာဘုတ်အဖွားဇာတာခွင်နှင့် သက်ရောက်ဂြိုလ် နှင့် သက်ရောက်လက်ကျန်နှစ်ကိုသိရှိနိုင်ပါသည်။
 ---
 
-<head>
-  <meta name="description" content="Get Maharbote from Birthday" />
-  <link rel="preload" href="/css/maharbote.css" as="style" />
-  <link rel="stylesheet" href="/css/maharbote.css" />
-  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-</head>
 <main class="main">
   <div class="row">
     <div class="col">
@@ -28,8 +23,14 @@ summary: >
           <label for="date">Date</label>
           <select name="date" id="date"></select>
         </div>
-        <input id="result-btn" type="submit" value="Submit" />
-        <input id="clear-btn" type="submit" value="Clear Result" />
+        <input
+          id="result-btn"
+          type="submit"
+          value="Submit" />
+        <input
+          id="clear-btn"
+          type="submit"
+          value="Clear Result" />
       </div>
     </div>
     <div class="col">
@@ -37,47 +38,80 @@ summary: >
       <div style="padding: 20px">
         <div id="result" style="padding: 18px">
           <div class="result-container">
-            <div class="x2-line"><p class="pc" id="mb-1"></p></div>
-            <div class="x2-line"><p class="pl" id="mb-2"></p></div>
-            <div class="x1-line"><p class="pl" id="mb-3"></p></div>
-            <div class="x1-line"><p class="pc" id="mb-4"></p></div>
-            <div class="x1-line"><p class="pr" id="mb-5"></p></div>
-            <div class="x2-line"><p class="pr" id="mb-6"></p></div>
-            <div class="x11-line"><p class="pc" id="mb-7"></p></div>
+            <div class="x2-line">
+              <p class="pc" id="mb-1"></p>
+            </div>
+            <div class="x2-line">
+              <p class="pl" id="mb-2"></p>
+            </div>
+            <div class="x1-line">
+              <p class="pl" id="mb-3"></p>
+            </div>
+            <div class="x1-line">
+              <p class="pc" id="mb-4"></p>
+            </div>
+            <div class="x1-line">
+              <p class="pr" id="mb-5"></p>
+            </div>
+            <div class="x2-line">
+              <p class="pr" id="mb-6"></p>
+            </div>
+            <div class="x11-line">
+              <p class="pc" id="mb-7"></p>
+            </div>
             <div class="y1-line"></div>
             <div class="y2-line"></div>
           </div>
-          <br />
+          <br/>
           <table>
             <tr>
-              <td><small class="table-text">အကြွင်း</small></td>
-              <td><small class="table-text" id="tb-1"></small></td>
+              <td>
+                <small class="table-text">အကြွင်း</small>
+              </td>
+              <td>
+                <small class="table-text" id="tb-1"></small>
+              </td>
             </tr>
             <tr>
-              <td><small class="table-text">မဟာဘုတ်</small></td>
-              <td><small class="table-text" id="tb-2"></small></td>
+              <td>
+                <small class="table-text">မဟာဘုတ်</small>
+              </td>
+              <td>
+                <small class="table-text" id="tb-2"></small>
+              </td>
             </tr>
             <tr>
-              <td><small class="table-text">အသက်</small></td>
-              <td><small class="table-text" id="tb-3"></small></td>
+              <td>
+                <small class="table-text">အသက်</small>
+              </td>
+              <td>
+                <small class="table-text" id="tb-3"></small>
+              </td>
             </tr>
             <tr>
-              <td><small class="table-text">သက်ရောက်</small></td>
-              <td><small class="table-text" id="tb-4"></small></td>
+              <td>
+                <small class="table-text">သက်ရောက်</small>
+              </td>
+              <td>
+                <small class="table-text" id="tb-4"></small>
+              </td>
             </tr>
             <tr>
-              <td><small class="table-text">လက်ကျန်နှစ်</small></td>
-              <td><small class="table-text" id="tb-5"></small></td>
+              <td>
+                <small class="table-text">လက်ကျန်နှစ်</small>
+              </td>
+              <td>
+                <small class="table-text" id="tb-5"></small>
+              </td>
             </tr>
           </table>
         </div>
-        <br />
+        <br/>
         <input
           id="download-btn"
           type="submit"
           value="Download PNG"
-          onclick="saveAsImage()"
-        />
+          onclick="saveAsImage()" />
       </div>
     </div>
   </div>

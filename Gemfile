@@ -10,8 +10,10 @@ group :jekyll_plugins do
   gem "jekyll-pagefind"
   gem "jekyll-seo-tag"
   gem "jekyll-sitemap"
+  gem "jekyll-tabler"
 end
 
-gem "rufo", "~> 0.18.1", group: :development
-
-gem "rubocop", "~> 1.81", group: :development
+group :development do
+  gem "rubocop"
+  gem "rufo"
+end

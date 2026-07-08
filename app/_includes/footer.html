@@ -1,7 +1,27 @@
-<footer>
-  <div class="container">
-    {% assign current_year = "now" | date: "%Y" %}
-    <p>&copy; {{ current_year }} {{ site.title }} All rights reserved.</p>
-    <p><span>Made With</span><span>❤️</span></p>
+<footer class="site_footer" role="contentinfo">
+  <div class="footer_meta">
+    <p>
+      © {{ site.time | date: '%Y' }}
+      <a
+        href="https://phothinmg.github.io/"
+        target="_blank"
+        id="copyright-link">{{ site.title }}</a>
+    </p>
+    <p>
+      Power By
+      <a
+        href="https://jekyllrb.com/"
+        target="_blank"
+        rel="noopener noreferrer">Jekyll</a>
+    </p>
+    <div class="footer_icons">
+      <a
+        href="https://github.com/phothinmg"
+        id="github"
+        aria-label="Github Profile"
+        target="_blank">
+        {% tabler ti-brand-github size=22 %}
+      </a>
+    </div>
   </div>
 </footer>

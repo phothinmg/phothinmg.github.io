@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+BUNDLE_DIR=".bundle"
+VENDOR_DIR="vendor"
+SITE_DIR="_site"
+CACHE_DIR="app/.jekyll-cache"
+
+GEMFILE_LOCK="Gemfile.lock"
+
+echo "Cleaning old lock files and directories..."
+[ -d $BUNDLE_DIR ] && rm -rf $BUNDLE_DIR
+[ -d $VENDOR_DIR ] && rm -rf $VENDOR_DIR
+[ -d $SITE_DIR ] && rm -rf $SITE_DIR
+[ -d $CACHE_DIR ] && rm -rf $CACHE_DIR
+[ -f $GEMFILE_LOCK ] && rm -rf $GEMFILE_LOCK
+
+echo "Configuring bundler path..."
+bundle config set --local path "vendor/bundle"
+
+echo "Configuring bundler system gems..."
+bundle config set --local system_gems false
+
+echo "Running bundle install..."
+bundle install
+
+echo "Init setup completed successfully!"

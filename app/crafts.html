@@ -3,16 +3,22 @@ layout: default
 title: Crafts
 ---
 
-<head>
-  <title>Crafts | {{ site.title }}</title>
-</head>
-<h1>Crafts</h1>
- {% for page in site.crafts %}
-
-    <div class="box">
-      <a href="{{ page.url }}" style="font-size: 18px">{{ page.title }}</a>
-      <p>{{ page.summary }}</p>
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Crafts</h2>
+    <div class="project-container" id="crafts-view">
+      {% for page in site.crafts %}
+        <div class="craft-container">
+          <a href="{{ page.url }}" class="craft-link">
+            <span class="craft-meta">
+              <span class="craft-meta-icon" aria-hidden="true"></span>
+              <span>Interactive Craft</span>
+            </span>
+            <span class="craft-title">{{ page.title }}</span>
+            <span class="craft-summary">{{ page.summary }}</span>
+          </a>
+        </div>
+      {% endfor %}
     </div>
-
-    {% endfor %}
-</ol>
+  </div>
+</section>

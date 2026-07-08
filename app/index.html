@@ -5,9 +5,65 @@ title: Home
 
 <!-- About -->
 {% include about.html %}
-<!-- Projects  -->
-{% include project_card.html %}
+<!-- Projects -->
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-title-container">
+      <h2 class="section-title">Projects</h2>
+      <a
+        href="/projects"
+        class="view-all"
+        title="view-all-projects">View All</a>
+    </div>
+    <div class="project-container" id="project-view-short">
+      {% for project in site.data.projects limit: 3 %}
+        {% include card.html title=project.title summary=project.summary homepage=project.homepage github=project.github npm=project.npm gems=project.gems
+        %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- Contributions -->
+<section id="contributions" class="section">
+  <div class="container">
+    <div class="section-title-container">
+      <h2 class="section-title">Contributions</h2>
+      <a
+        href="/contributions"
+        class="view-all"
+        title="view-all-projects">View All</a>
+    </div>
+    <div class="project-container" id="contributions-view-short">
+      {% for project in site.data.contributes limit: 3 %}
+        {% include card.html title=project.title summary=project.summary homepage=project.homepage github=project.github npm=project.npm gems=project.gems
+        %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
 <!-- Blog -->
-{% include blog_card.html %}
+{% comment %} {% include blog_card.html %} {% endcomment %}
 <!-- Crafts -->
-{% include crafts_card.html %}
+<section id="crafts" class="section">
+  <div class="container">
+    <div class="section-title-container">
+      <h2 class="section-title">Crafts</h2>
+      <a
+        href="/crafts"
+        class="view-all"
+        title="view-all-crafts">View All</a>
+    </div>
+    {% for page in site.crafts %}
+      <div class="craft-container">
+        <a href="{{ page.url }}" class="craft-link">
+          <span class="craft-meta">
+            <span class="craft-meta-icon" aria-hidden="true"></span>
+            <span>Interactive Craft</span>
+          </span>
+          <span class="craft-title">{{ page.title }}</span>
+          <span class="craft-summary">{{ page.summary }}</span>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>

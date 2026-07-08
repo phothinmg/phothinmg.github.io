@@ -9,6 +9,8 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-pagefind
+  - jekyll-minify-js
 exclude:
   - Makefile
 collections:
@@ -16,11 +18,20 @@ collections:
     output: true
   blog:
     output: true
-terser:
+minify_js:
   enabled: true # disable to skip minification
+  entry_dir: js
   output_dir: js # destination directory under site dest
-  compress: true # enable compression
-  mangle: true # enable name mangling
-  source_map: true # produce .map files
-  exclude:
-    - "**/*.min.js" # glob patterns (relative to source dir) to skip
+  terser_opts:
+    compress: true # enable compression
+    mangle: true # enable name mangling
+    source_map: true # produce .map files
+jekyll_pagefind:
+  quiet: true
+nav_links:
+  - text: Projects
+    link: "/#projects"
+  - text: Contributions
+    link: "/#contributions"
+  - text: Crafts
+    link: "/#crafts"

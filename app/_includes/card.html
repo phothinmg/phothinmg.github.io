@@ -1,0 +1,61 @@
+<div class="card">
+  <div class="card-info">
+    <h3>{{ include.title }}</h3>
+    <div class="summary">
+      <p>{{ include.summary }}</p>
+      {% if include.homepage %}
+        <p>Homepage
+          <a
+            href="{{ include.homepage  }}"
+            target="_blank"
+            aria-label="{{ include.title |  join: ' ' | 'Homepage' }}"
+            rel="noopener noreferrer">{% tabler ti-external-link size=18 %}</a>
+        </p>
+      {% endif %}
+    </div>
+    <div class="badge">
+      {% if include.github %}
+        <a
+          href="{{ include.github }}"
+          aria-label="{{ include.title |  join: ' ' | 'Github' }}"
+          target="_blank"
+          rel="noopener">
+          <img
+            alt="Static Badge"
+            src="https://img.shields.io/badge/github-repo-blue?style=for-the-badge&logo=github"
+            fetchpriority="high"
+            width="150"
+            height="30" />
+        </a>
+      {% endif %}
+      {% if include.npm %}
+        <a
+          href="{{ include.npm }}"
+          aria-label="{{ include.title |  join: ' ' | 'NPM' }}"
+          target="_blank"
+          rel="noopener">
+          <img
+            alt="Static Badge"
+            src="https://img.shields.io/badge/npm-package-red?style=for-the-badge&logo=npm"
+            fetchpriority="high"
+            width="150"
+            height="30" />
+        </a>
+      {% endif %}
+      {% if include.gems %}
+        <a
+          href="{{ include.gems }}"
+          aria-label="{{ include.title |  join: ' ' | 'Ruby Gem' }}"
+          target="_blank"
+          rel="noopener">
+          <img
+            alt="Static Badge"
+            src="https://img.shields.io/badge/ruby-gems-red?style=for-the-badge&logo=rubygems"
+            fetchpriority="high"
+            width="150"
+            height="30" />
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>

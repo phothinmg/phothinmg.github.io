@@ -31,6 +31,7 @@
     "ggroup",
     "Gmefile",
     "gpnn",
+    "hcal",
     "kcnt",
     "Mathjax",
     "Meeus",
@@ -40,11 +41,15 @@
     "noopener",
     "rubocop",
     "rufo",
+    "sbhspan",
     "sgroup",
     "srcset",
     "stylesheet",
+    "tbtn",
     "topbtn",
+    "topdiv",
     "vgroup",
+    "wdspan",
     "xmlschema"
   ]
 }

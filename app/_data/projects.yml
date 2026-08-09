@@ -5,8 +5,9 @@
   homepage: https://suseejs.org/
 - title: Thetkarit
   github: https://github.com/phothinmg/thetkarits
+  npm: https://www.npmjs.com/package/thetkarit
   summary: A software library for Burmese calendar computation and related astronomical calculations.
-- title: mmdevs.org
-  github: https://github.com/phothinmg/mmdevs.org
-  summary: A community-driven platform that provides managed subdomains for developers and technical communities in Myanmar.
-  homepage: https://docs.mmdevs.org/
+- title: mmcov
+  github: https://github.com/phothinmg/mmcov
+  npm: https://www.npmjs.com/package/mmcov
+  summary: A Node.js library that converts an lcov.info file into a static HTML coverage site.

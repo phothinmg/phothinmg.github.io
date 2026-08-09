@@ -6,6 +6,7 @@ import thetkarit from "https://esm.sh/thetkarit";
     const dv = document.createElement("div");
 
     const dt = new Date();
+    const tzName = Intl.DateTimeFormat().resolvedOptions().timeZone;
     // ------------------------------------
     function showMonthView() {
         dv.style.setProperty("display", "none");
@@ -44,6 +45,30 @@ import thetkarit from "https://esm.sh/thetkarit";
     // -----------------------------
     const topdiv = document.createElement("div");
     topdiv.classList.add("topdiv");
+    // Moon
+    let ma = thetkarit.moon.moonAge(tzName).moonAge;
+    const moonDiv = document.createElement("div");
+    moonDiv.classList.add("moon-div");
+    const moonAgeValue = document.createElement("span");
+    moonAgeValue.classList.add("ma");
+    moonAgeValue.textContent = ma.toFixed(10);
+    const divMoon = document.createElement("div");
+    divMoon.classList.add("moon");
+    divMoon.innerHTML = `<span>Moon Age :</span>`;
+    divMoon.appendChild(moonAgeValue);
+
+    setInterval(() => {
+        ma = thetkarit.moon.moonAge(tzName).moonAge;
+        moonAgeValue.textContent = ma.toFixed(10);
+    }, 1800);
+
+    const tzDiv = document.createElement("div");
+    tzDiv.classList.add("moon");
+    tzDiv.innerHTML = `<span>Time Zone :</span><span class="right">${tzName}</span>`;
+
+    moonDiv.appendChild(divMoon);
+    moonDiv.appendChild(tzDiv);
+
     // -----------------------
     const toph3 = document.createElement("h3");
     toph3.innerHTML = "Burmese Calendar";
@@ -163,11 +188,22 @@ import thetkarit from "https://esm.sh/thetkarit";
             // ----------------------------------------------
             const datespan = document.createElement("span");
             const wdid = dView[i].weekday.index;
-            if (wdid === 0 || wdid === 6 || dView[i].isHoliday) {
+            if (wdid === 0 || wdid === 6 || (dView[i].isHoliday && !dView[i].isNow)) {
                 datespan.classList.add("hd");
+            }
+            if (dView[i].isNow) {
+                datespan.classList.add("today");
+                if (dView[i].isHoliday) {
+                    datespan.classList.add("now-hld");
+                } else {
+                    datespan.classList.add("now");
+                }
             }
             datespan.classList.add("datespan");
             datespan.innerHTML = dView[i].day.str;
+            if (dView[i].isNow) {
+                console.log(dView[i].day.str);
+            }
             // -------------------------------------------
             const wdspan = document.createElement("span");
             wdspan.classList.add("wdspan");
@@ -245,6 +281,7 @@ import thetkarit from "https://esm.sh/thetkarit";
         showMonthView();
     }
     // ----------------------------------------------------------
+    calBody.appendChild(moonDiv);
     calBody.appendChild(wddiv);
     calBody.appendChild(daydiv);
     // -------------------------------------------

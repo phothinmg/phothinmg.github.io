@@ -53,7 +53,7 @@ title: Home
         class="view-all"
         title="view-all-crafts">View All</a>
     </div>
-    {% for page in site.crafts %}
+    {% for page in site.crafts limit: 3 %}
       <div class="craft-container">
         <a href="{{ page.url }}" class="craft-link">
           <span class="craft-meta">

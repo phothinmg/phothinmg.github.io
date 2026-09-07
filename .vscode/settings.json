@@ -36,20 +36,25 @@
     "Mathjax",
     "Meeus",
     "mgroup",
+    "mmcov",
     "Naing",
     "ngroup",
     "noopener",
+    "Pagefind",
     "rubocop",
     "rufo",
     "sbhspan",
     "sgroup",
+    "Shiki",
     "srcset",
     "stylesheet",
+    "Tabler",
     "tbtn",
+    "Thetkarit",
     "topbtn",
     "topdiv",
     "vgroup",
     "wdspan",
-    "xmlschema"
+    "xmlschema","susee"
   ]
 }

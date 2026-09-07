@@ -1,9 +1,9 @@
-- title: Susee
+- title: susee
   github: https://github.com/phothinmg/susee
   npm: https://www.npmjs.com/package/susee
-  summary: A lightweight TypeScript bundler designed to produce compiled output across multiple JavaScript module formats.
+  summary: A high-performance TypeScript library bundler
   homepage: https://suseejs.org/
-- title: Thetkarit
+- title: thetkarit
   github: https://github.com/phothinmg/thetkarits
   npm: https://www.npmjs.com/package/thetkarit
   summary: A software library for Burmese calendar computation and related astronomical calculations.
